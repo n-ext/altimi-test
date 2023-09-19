@@ -6,21 +6,20 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import "./Home.css";
+import IncrementValue from "../components/IncrementValue";
+import Counter from "../components/Counter";
 
 const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>Example App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <IncrementValue />
+        <Counter />
       </IonContent>
     </IonPage>
   );
