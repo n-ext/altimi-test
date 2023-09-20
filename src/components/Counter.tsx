@@ -8,13 +8,15 @@ const Counter = (props: Props) => {
 
   const [isRunning, setIsRunning] = useState(false);
 
-  useEffect(() => {
-    setInterval(() => {
-      if (isRunning) {
+  if (isRunning) {
+    useEffect(() => {
+      setInterval(() => {
         setValue((v) => v + 1);
-      }
-    }, 1000);
-  }, [isRunning]);
+      }, 1000);
+    }, [isRunning]);
+  } else {
+    useEffect(() => {}, [isRunning]);
+  }
 
   const toggleCounter = () => {
     setIsRunning(!isRunning);
